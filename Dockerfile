@@ -17,8 +17,6 @@ COPY . /app/
 
 RUN python manage.py collectstatic --noinput
 
-EXPOSE 8000
-
-ENTRYPOINT [ "gunicorn", "vulyk_project.wsgi", "-b", "0.0.0.0:8000" ]
+EXPOSE 10000
 
 CMD ["sh", "-c", "python manage.py migrate && python populate_db.py && gunicorn vulyk_project.wsgi:application --bind 0.0.0.0:10000"]
