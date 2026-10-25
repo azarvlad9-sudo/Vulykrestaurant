@@ -18,7 +18,7 @@
                 {% endfor %}
                 <button type="submit" class="btn-3d w-100 mt-3">Зареєструватися</button>
             </form>
-            <p class="text-center text-muted mt-4">Вже є акаунт? <a href="{% url 'login' %}" class="text-warning">Увійти</a></p>
+            <a href="{% url 'users:login' %}" class="text-warning">Увійти</a>
         </div>
     </div>
 </div>
