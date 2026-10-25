@@ -7,15 +7,10 @@ def user_login(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"Ви увійшли як {username}.")
-                return redirect('menu:menu_list')
-            else:
-                messages.error(request, "Невірне ім'я користувача або пароль.")
+            user = form.get_user()
+            login(request, user)
+            messages.info(request, f"Ви увійшли як {user.username}.")
+            return redirect('menu:menu_list')
         else:
             messages.error(request, "Невірне ім'я користувача або пароль.")
     else:
