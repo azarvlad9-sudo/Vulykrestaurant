@@ -125,8 +125,8 @@
             <div class="d-flex align-items-center flex-wrap gap-2">
                 <a href="{% url 'menu:home' %}" class="btn btn-outline-warning rounded-pill px-4" data-i18n="nav_home">Головна</a>
                 <a href="{% url 'menu:menu_list' %}" class="btn btn-outline-warning rounded-pill px-4" data-i18n="nav_menu">Меню</a>
-                <a href="#" class="btn btn-outline-warning rounded-pill px-4" data-i18n="nav_login">Вхід</a>
-                <a href="#" class="btn btn-warning rounded-pill px-4 text-dark fw-bold" data-i18n="nav_register">Реєстрація</a>
+                <a href="{% url 'users:login' %}" class="btn btn-outline-warning rounded-pill px-4" data-i18n="nav_login">Вхід</a>
+                <a href="{% url 'users:register' %}" class="btn btn-warning rounded-pill px-4 text-dark fw-bold" data-i18n="nav_register">Реєстрація</a>
                 <a href="{% url 'cart:cart_detail' %}" class="btn-3d text-decoration-none ms-2">
                     <i class="fa-solid fa-cart-shopping me-1"></i> <span data-i18n="nav_cart">кошик</span>
                 </a>
